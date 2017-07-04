@@ -1,0 +1,4 @@
+---
+time_timezone: Asia/Shanghai
+time_local_rtc: 0
+time_ntp: true
