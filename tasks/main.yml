@@ -5,7 +5,12 @@
 - name: set local rtc to {{ time_local_rtc }}
   shell: timedatectl set-local-rtc {{ time_local_rtc }}
 
-  # EL 7 is using chronyd
-  # `chronyc tracking` to check status of ntp
+# EL 7 is using chronyd
+# `chronyc tracking` to check status of ntp
+- name: ensure chrony is installed
+  yum:
+    name: chrony
+    state: latest
+
 - name: setup ntp
   shell: timedatectl set-ntp {{ time_ntp }}
